@@ -1,16 +1,15 @@
-import React from 'react';
+import React from 'react'
 import Editor from '../../components/Editor/Editor'
 import PreviewFrame from '../../components/Preview/PreviewFrame'
-import Preview from '../../components/Preview/Preview'
 import Toolbar from '../../components/Toolbar/Toolbar'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as FileActions from '../../redux/actions'
 
-class App extends React.Component {
+class IDEView extends React.Component {
 	render() {
 		return (
-			<div className="app">
+			<div className="ide">
 				<Toolbar 
 					className="toolbar"
 					isPlaying={this.props.ide.isPlaying}
@@ -26,7 +25,7 @@ class App extends React.Component {
 			    }
 			    isPlaying={this.props.ide.isPlaying}/>
 			</div>
-		);
+		)
 	}
 }
 
@@ -41,4 +40,4 @@ function mapDispatchToProps(dispatch) {
 	return bindActionCreators(FileActions, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(IDEView);
